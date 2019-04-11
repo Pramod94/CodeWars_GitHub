@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Welcome. In this kata, you are asked to square every digit of a number.
+
+        For example, if we run 9119 through the function, 811181 will come out, because 9 square is 81 and
+         
+        1 square is 1.
+        
+        Note: The function accepts an integer and returns an integer
+    </h3>
+
+    <div>
+        Enter the number : <input type="text" id="num" value="">
+
+        <button onclick="square()">Click</button>
+
+        <br>
+
+        <p id="nm"></p>
+        
+    </div>
+
+    <script>
+
+        var square = function(){
+
+            var num = document.getElementById("num").value;
+
+            var num1 = num.toString();
+
+            var num2,ary=[];
+
+            for(var i = 0; i< num1.length ; i++){
+                num2 = num1[i] * num1[i];
+                ary.push(num2);
+            }
+
+            document.getElementById("nm").innerHTML = ary.join("");
+
+        };
+
+    
+//**************************************************//
+
+//Number() will convert the input to number
+//Array.map() funcion will create a new array by calling the provided function for each element of the array
+
+// Best solution
+
+function squareDigits(num){
+  return Number(('' + num).split('').map(function (val) { return val * val;}).join(''));
+  
+}
+
+// 2nd Best
+
+function squareDigits(num){
+  var array = num.toString().split('').map( function(int) {
+    var i = parseInt(int);
+    return i * i;
+  });
+  
+  return parseInt(array.join(""));
+}
+
+// 3rd Best
+
+function squareDigits(num){
+    var string = num.toString();
+    var results = [];
+    for (var i = 0; i < string.length; i++){
+        results[i] = string[i] * string[i];
+    }
+    return Number(results.join(''));
+};
+
+
+    </script>
+</body>
+</html>
