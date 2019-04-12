@@ -27,13 +27,13 @@
                 //     fList.push(list[i]);
                 // }
 
-                if(!isNaN(list[i])){
-                    fList.push(list[i]);
-                }
-
-                // if (typeof list[i] == 'number') {
+                // if(!isNaN(list[i])){
                 //     fList.push(list[i]);
                 // }
+
+                if (typeof list[i] == 'number') {
+                    fList.push(list[i]);
+                }
             }
             return fList;
         }
