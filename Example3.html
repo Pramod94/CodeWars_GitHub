@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        In this kata you will create a function that takes a list of non-negative integers
+        and strings and returns a new list with the strings filtered out.
+        <br>
+        Example : filter_list([1,'a','b',0,15]) == [1,0,15]
+    </div>
+
+    <script>
+        var list = [1, 2, 'aasf', '1', '148', 123];
+
+        var filterFunc = function (list) {
+            var fList = [];
+            for (var i = 0; i <= list.length; i++) {
+
+                // if(isNaN(list[i])==false){
+                //     fList.push(list[i]);
+                // }
+
+                // if(!isNaN(list[i])){
+                //     fList.push(list[i]);
+                // }
+
+                if (typeof list[i] == 'number') {
+                    fList.push(list[i]);
+                }
+            }
+            return fList;
+        }
+
+        console.log(filterFunc(list));
+
+        //********************************************************//
+
+        //Best Practice
+
+        function filter_list(l) {
+            return l.filter(function (v) { return typeof v == 'number' })
+        }
+
+        
+        //Filter function
+
+        /* 
+        
+        The filter() method creates a new array with all elements that pass the test implemented
+         by the provided function.
+
+         var words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+        const result = words.filter(word => word.length > 6);
+
+        console.log(result);
+        
+        // expected output: Array ["exuberant", "destruction", "present"]
+
+        */
+
+    </script>
+
+</body>
+
+</html>
